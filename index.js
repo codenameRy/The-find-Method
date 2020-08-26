@@ -89,3 +89,19 @@ var account = accounts.find((account)=> {
 })
 
 console.log(account)
+
+//Challenge 3 - Custom findWhere Helper
+
+function findWhere(array, criteria) {
+  var prop = Object.keys(criteria)
+  return array.find(x => {
+    return x[prop] === criteria[prop]
+  })
+}
+
+var ladders = [
+  { id: 1, height: 20 },
+  { id: 3, height: 25 }
+]
+
+findWhere(ladders, { height: 25})
